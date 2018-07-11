@@ -24,18 +24,22 @@
                 </tr>
             </thead>
             <tbody>
+                <c:set var="Count" value="0" scope="page" />
                 <c:forEach items="${notes}" var="note">
                     <tr>
                         <td><c:out value="${note.noteID}" /></td>
                         <td><c:out value="${note.NOTE_SUBJECT}" /></td>
                         <td><c:out value="${note.NOTE_DESCRIPTION}" /></td>
+                        <c:set var="Count" value="${Count + 1}" scope="page" />
                         <td><a href="NoteServlet?action=edit&noteID=<c:out value="${note.noteID}"/>">Update</a></td>
                         <td><a href="NoteServlet?action=delete&noteID=<c:out value="${note.noteID}"/>">Delete</a></td>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
+                 <c:if test = "${Count < 5}">
         <p><a href="NoteServlet?action=insert">Add Note</a></p>
+          </c:if>
         <p><a href="NoteServlet?action=deleteAllNotes">Delete all notes</a></p>
         <br> <br>
         <h6>&COPY; Developed by Zohaib Ahmed</h6>
