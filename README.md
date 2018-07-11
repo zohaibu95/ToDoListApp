@@ -7,6 +7,7 @@ Salient features of this app (for evaluation) are as under:
  - Using Oracle 11g DBMS
  - Ui is quite simple just for evaluation. 
  - Used JSP/Servlets/JSTL tags
+ - Put a check that a user cannot have more than 5 notes (as mentioned in the requirement).
  
  I have used parametrized queries to avoid SQL injection. Queries which i have used for create/delete/update/view/delete all are as under
  
